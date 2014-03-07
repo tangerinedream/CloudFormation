@@ -104,7 +104,7 @@
         "MaxSize": "2",
         "MinSize": "1",
         "DesiredCapacity" : "2",
-        "Recurrence": "0 * * * *"
+        "Recurrence": "10 * * * *"
       }
     },
     
@@ -117,7 +117,7 @@
         "MaxSize": "1",
         "MinSize": "1",
         "DesiredCapacity" : "1",
-        "Recurrence": "30 * * * *"
+        "Recurrence": "50 * * * *"
       }
     },
     
