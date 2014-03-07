@@ -95,6 +95,32 @@
       }
     },
     
+    "ScheduledScaleOut": {
+      "Type": "AWS::AutoScaling::ScheduledAction",
+      "Properties": {
+        "AutoScalingGroupName": {
+          "Ref": "AutoScaleGroup"
+        },
+        "MaxSize": "2",
+        "MinSize": "1",
+        "DesiredCapacity" : "2",
+        "Recurrence": "0 * * * *"
+      }
+    },
+    
+    "ScheduledScaleIn": {
+      "Type": "AWS::AutoScaling::ScheduledAction",
+      "Properties": {
+        "AutoScalingGroupName": {
+          "Ref": "AutoScaleGroup"
+        },
+        "MaxSize": "1",
+        "MinSize": "1",
+        "DesiredCapacity" : "1",
+        "Recurrence": "30 * * * *"
+      }
+    },
+    
     "ElasticLoadBalancer" : {
       "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
       "Properties" : {
@@ -111,10 +137,10 @@
           "Target" : { 
           		"Fn::Join" : [ "", ["HTTP:", { "Ref" : "WebServerPort" }, "/"] ]
           },
-          "HealthyThreshold" : "2",
+          "HealthyThreshold" : "3",
           "UnhealthyThreshold" : "5",
-          "Interval" : "30",
-          "Timeout" : "5"
+          "Interval" : "60",
+          "Timeout" : "10"
         }
        }
     },
