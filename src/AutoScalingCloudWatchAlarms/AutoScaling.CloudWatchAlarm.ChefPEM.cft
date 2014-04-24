@@ -195,7 +195,7 @@
 	"CPUAlarmHigh": {
 	   "Type": "AWS::CloudWatch::Alarm",
 	   "Properties": {
-	      "AlarmDescription": "Alarm if CPU too high or metric disappears indicating instance is down",
+	      "AlarmDescription": "Alarm if CPU > 30 for a sustained period of 60 seconds",
 	      "AlarmActions": [ { "Ref": "ScaleOutPolicy" } ],
 	      "ComparisonOperator": "GreaterThanThreshold",
 	      "EvaluationPeriods": "3",
@@ -222,7 +222,7 @@
 	"CPUAlarmLow": {
 	   "Type": "AWS::CloudWatch::Alarm",
 	   "Properties": {
-	      "AlarmDescription": "Alarm if CPU falls below 10%",
+	      "AlarmDescription": "Alarm if CPU falls below 10% for a sustained period of 60 seconds",
 	      "AlarmActions": [ { "Ref": "ScaleInPolicy" } ],
 	      "ComparisonOperator": "LessThanThreshold",
 	      "EvaluationPeriods": "3",
