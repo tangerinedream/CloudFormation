@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "AWS CloudFormation Template AutoScalingScheduledCFTemplate: Create a load balanced, Auto Scaled Chef enabled instance farm. The farm increases at the top of the hour and decreases at the bottom of the hour.  This example creates an Auto Scaling group behind a load balancer with a simple health check.",
+  "Description" : "CloudFormation Template: AutoScaling CloudWatch Alarm Action: Create a Multi-AZ, load balanced, Auto Scaled instance farm. The farm increases at the top of the hour and decreases at the bottom of the hour.  This example creates an Auto Scaling group behind a load balancer with a simple health check.",
   
   "Parameters" : {
     "InstanceType" : {
